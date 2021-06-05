@@ -156,6 +156,7 @@ class _LoginPageState extends State<LoginPage> {
           onTap: () async {
             print(phoneController.text);
             print(passwordController.text);
+            // ignore: missing_required_param
             await FirebaseAuth.instance.verifyPhoneNumber(
               phoneNumber: '+225${phoneController.text.trim()}',
               verificationCompleted: (AuthCredential credential) {

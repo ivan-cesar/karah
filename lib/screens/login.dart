@@ -52,8 +52,8 @@ class _LoginPageState extends State<LoginPage> {
         Provider.of<AuthNotifier>(context, listen: false);
     RegExp regExp = new RegExp(
         r'^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$');
-    if (!regExp.hasMatch(_user.email)) {
-      toast("Enter a valid Email ID");
+    if ('${_user.phone.trim()}@gmail.com'==null) {
+      toast("Entrez un numero valide");
     } else if (_user.password.length < 8) {
       toast("Password must have atleast 8 characters");
     } else {
@@ -153,17 +153,17 @@ class _LoginPageState extends State<LoginPage> {
         ),
         //LOGIN BUTTON
         GestureDetector(
-          onTap: () async {
+          onTap: (){_submitForm();
+          /*async {
             print(phoneController.text);
             print(passwordController.text);
-            // ignore: missing_required_param
             await FirebaseAuth.instance.verifyPhoneNumber(
               phoneNumber: '+225${phoneController.text.trim()}',
               verificationCompleted: (AuthCredential credential) {
                 print('everything is ok ');
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) =>  HomePage()),
+                  MaterialPageRoute(builder: (context) =>  AdminHomePage()),
                 );
                 // successDialog(context, "Tout est bien");
               },
@@ -180,8 +180,7 @@ class _LoginPageState extends State<LoginPage> {
               // codeSent: (String verificationId, int forceResendingToken) {
               //   print('code sent');
               // },
-            );
-            // _submitForm();
+            );*/
           },
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
@@ -312,7 +311,15 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
+        /*child:Container(
+          width: 100.0,
+          height: 100.0,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: new AssetImage("images/logo_karah.png"),
+                  fit: BoxFit.cover)),
+        ),*/
+        /*decoration: BoxDecoration(
           image: DecorationImage(
               image: new AssetImage("images/logo_karah.png"),
               fit: BoxFit.cover),
@@ -325,7 +332,7 @@ class _LoginPageState extends State<LoginPage> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),*/
-        ),
+        ),*/
         child: Form(
           key: _formkey,
           autovalidate: true,

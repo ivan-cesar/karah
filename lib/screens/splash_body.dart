@@ -76,7 +76,7 @@ class _BodyState extends State<Body> {
                     ),
                     Spacer(flex: 1),
                     DefaultButton(
-                      text: "S'INSCRIRE",
+                      text: "SE CONNECTER",
                       press: () {
                         Navigator.push(
                           context,
@@ -86,7 +86,7 @@ class _BodyState extends State<Body> {
                     ),
                     SizedBox(height:10.0),
                     MozartButton(
-                      text: "SE CONNECTER",
+                      text: "S' INSCRIRE",
                       press: () {
                         Navigator.push(
                           context,

@@ -6,6 +6,7 @@ import 'package:canteen_food_ordering_app/screens/login.dart';
 import 'package:canteen_food_ordering_app/screens/navigationBar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -29,7 +30,7 @@ login(User user, AuthNotifier authNotifier, BuildContext context) async {
   AuthResult authResult;
   try {
     authResult = await FirebaseAuth.instance
-      .signInWithEmailAndPassword(email: user.email, password: user.password);
+      .signInWithEmailAndPassword(email: '${user.phone}@gmail.com'.trim(), password: user.password);
   } catch (error) {
     pr.hide().then((isHidden) {
       print(isHidden);
@@ -93,7 +94,7 @@ signUp(User user, AuthNotifier authNotifier, BuildContext context) async {
   AuthResult authResult;
   try{
     authResult = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-      email: user.email.trim(), password: user.password
+      email: '${user.phone.trim()}@gmail.com', password: user.password
     );
   } catch(error){
     pr.hide().then((isHidden) {
@@ -122,7 +123,7 @@ signUp(User user, AuthNotifier authNotifier, BuildContext context) async {
         pr.hide().then((isHidden) {
           print(isHidden);
         });
-        toast("Verification link is sent to ${user.email}");
+        toast("Votre compte à été créer avec succes");
         Navigator.pop(context);
       }
     }

@@ -44,9 +44,9 @@ class _SignupPageState extends State<SignupPage> {
     AuthNotifier authNotifier = Provider.of<AuthNotifier>(context, listen: false);
     if(_user.displayName.length < 3){
       toast("Name must have atleast 3 characters");
-    } else if(!regExp.hasMatch(_user.email)){
+    } /*else if(!regExp.hasMatch(_user.email)){
       toast("Enter a valid Email ID");
-    } else if(_user.phone.length != 10){
+    }*/ else if(_user.phone.length != 10){
       toast("Contact number length must be 10");
     } else if(int.tryParse(_user.phone) == null){
       toast("Contact number must be a number");
@@ -61,20 +61,21 @@ class _SignupPageState extends State<SignupPage> {
       signUp(_user, authNotifier, context);
     }
   }
-
+  Color bulbColor = Color.fromRGBO(1, 70, 134, 1.0);
   Widget _buildSignUPForm() {
     return Column(
       children: <Widget>[
         SizedBox(
-          height: 60,
+          height: 50,
         ),
         // User Name Field
         Container(
           margin: EdgeInsets.symmetric(horizontal: 40),
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(40),
+              color: Colors.white,
+              border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
+              borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(
             keyboardType: TextInputType.emailAddress,
@@ -84,31 +85,30 @@ class _SignupPageState extends State<SignupPage> {
             onSaved: (String value) {
               _user.displayName = value;
             },
-            cursorColor: Color.fromRGBO(255, 63, 111, 1),
+            cursorColor: Color.fromRGBO(1, 70, 134, 1.0),
             decoration: InputDecoration(
               border: InputBorder.none,
-              hintText: 'User name',
+              hintText: 'Votre nom',
               hintStyle: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
               icon: Icon(
                 Icons.account_circle,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
             ),
           ),
         ),
-        SizedBox(
-          height: 20,
-        ),
         // Email Field
-        Container(
+        SizedBox(height: 20,),
+        /*Container(
           margin: EdgeInsets.symmetric(horizontal: 40),
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(40),
+            border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(
             validator: (String value) {
@@ -118,17 +118,49 @@ class _SignupPageState extends State<SignupPage> {
               _user.email = value;
             },
             keyboardType: TextInputType.emailAddress,
-            cursorColor: Color.fromRGBO(255, 63, 111, 1),
+            cursorColor:Color.fromRGBO(1, 70, 134, 1.0),
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: 'Email',
               hintStyle: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
               icon: Icon(
                 Icons.email,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
+              ),
+            ),
+          ),
+        ),*/
+        SizedBox(height: 20,),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 40),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: TextFormField(
+            keyboardType: TextInputType.emailAddress,
+            validator: (String value) {
+              return null;
+            },
+            onSaved: (String value) {
+              _user.displayLastName = value;
+            },
+            cursorColor: Color.fromRGBO(1, 70, 134, 1.0),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: 'Votre prénom',
+              hintStyle: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(1, 70, 134, 1.0),
+              ),
+              icon: Icon(
+                Icons.account_circle,
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
             ),
           ),
@@ -142,7 +174,8 @@ class _SignupPageState extends State<SignupPage> {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(40),
+            border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(
             validator: (String value) {
@@ -152,17 +185,49 @@ class _SignupPageState extends State<SignupPage> {
               _user.phone = value;
             },
             keyboardType: TextInputType.phone,
-            cursorColor: Color.fromRGBO(255, 63, 111, 1),
+            cursorColor:Color.fromRGBO(1, 70, 134, 1.0),
             decoration: InputDecoration(
               border: InputBorder.none,
-              hintText: 'Contact Number',
+              hintText: 'Numero de téléphone',
               hintStyle: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
               icon: Icon(
                 Icons.phone,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
+              ),
+            ),
+          ),
+        ),
+        SizedBox(height: 20,),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 40),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: TextFormField(
+            keyboardType: TextInputType.emailAddress,
+            validator: (String value) {
+              return null;
+            },
+            onSaved: (String value) {
+              _user.location = value;
+            },
+            cursorColor: Color.fromRGBO(1, 70, 134, 1.0),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: 'Adresse géographique',
+              hintStyle: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(1, 70, 134, 1.0),
+              ),
+              icon: Icon(
+                Icons.location_on,
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
             ),
           ),
@@ -171,12 +236,53 @@ class _SignupPageState extends State<SignupPage> {
           height: 20,
         ),
         // Password Field
+        Text(" Sélectionner votre statut !",
+          style: TextStyle(fontSize: 20,
+          color: Color.fromRGBO(1, 70, 134, 1.0)),
+        ),
+        Container(
+          width: 280,
+          child: Row(
+            children: <Widget>[
+              Radio(
+                  value: Colors.red,
+                  groupValue: bulbColor,
+                  onChanged: (val) {
+                    bulbColor = val;
+                    setState(() {});
+                  }),
+              Text(
+                'Professionnel (Activité)',
+                style: TextStyle(fontSize: 20,
+                color: Color.fromRGBO(1, 70, 134, 1.0)),
+              )
+            ],
+          ),
+        ),
+        Container(
+          width: 280,
+          child: Row(
+            children: <Widget>[
+              Radio(
+                  value: Color.fromRGBO(1, 70, 134, 1.0),
+                  groupValue: bulbColor,
+                  onChanged: (val) {
+                    bulbColor = val;
+                    setState(() {});
+                  }),
+              Text('Particulier (Ménages)',
+                  style: TextStyle(fontSize: 20,
+                    color: Color.fromRGBO(1, 70, 134, 1.0)),)
+            ],
+          ),
+        ),
         Container(
           margin: EdgeInsets.symmetric(horizontal: 40),
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(40),
+            border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
+            color: Color.fromRGBO(1, 70, 134, 0.4196078431372549),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(
             obscureText: showPassword,
@@ -187,12 +293,12 @@ class _SignupPageState extends State<SignupPage> {
               _user.password = value;
             },
             keyboardType: TextInputType.visiblePassword,
-            cursorColor: Color.fromRGBO(255, 63, 111, 1),
+            cursorColor: Color.fromRGBO(1, 70, 134, 1.0),
             decoration: InputDecoration(
               suffixIcon: IconButton(
                 icon: Icon(
                   (showPassword) ? Icons.visibility_off : Icons.visibility,
-                  color: Color.fromRGBO(255, 63, 111, 1),
+                  color: Color.fromRGBO(1, 70, 134, 1.0),
                 ), 
                 onPressed: () {
                   setState(() {
@@ -201,14 +307,14 @@ class _SignupPageState extends State<SignupPage> {
                 }
               ),
               border: InputBorder.none,
-              hintText: 'Password',
+              hintText: 'Créer votre mot de passe',
               hintStyle: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
               icon: Icon(
                 Icons.lock,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
             ),
           ),
@@ -221,8 +327,9 @@ class _SignupPageState extends State<SignupPage> {
           margin: EdgeInsets.symmetric(horizontal: 40),
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(40),
+            border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
+            color: Color.fromRGBO(1, 70, 134, 0.4196078431372549),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(
             validator: (String value) {
@@ -231,12 +338,12 @@ class _SignupPageState extends State<SignupPage> {
             obscureText: showConfirmPassword,
             keyboardType: TextInputType.visiblePassword,
             controller: _passwordController,
-            cursorColor: Color.fromRGBO(255, 63, 111, 1),
+            cursorColor: Color.fromRGBO(1, 70, 134, 1.0),
             decoration: InputDecoration(
               suffixIcon: IconButton(
                 icon: Icon(
                   (showConfirmPassword) ? Icons.visibility_off : Icons.visibility,
-                  color: Color.fromRGBO(255, 63, 111, 1),
+                  color: Color.fromRGBO(1, 70, 134, 1.0),
                 ), 
                 onPressed: () {
                   setState(() {
@@ -245,20 +352,20 @@ class _SignupPageState extends State<SignupPage> {
                 }
                 ),
               border: InputBorder.none,
-              hintText: 'Confirm Password',
+              hintText: 'Confirmer votre mot de passe',
               hintStyle: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
               icon: Icon(
                 Icons.lock,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
             ),
           ),
         ),
         SizedBox(
-          height: 50,
+          height: 10,
         ),
         // Sign Up Button
         GestureDetector(
@@ -268,23 +375,23 @@ class _SignupPageState extends State<SignupPage> {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: Color.fromRGBO(1, 70, 134, 1.0),
               borderRadius: BorderRadius.circular(30),
             ),
             child: Text(
-              "Sign Up",
+              "Créer mon compte",
               style: TextStyle(
                 fontSize: 20,
-                color: Color.fromRGBO(255, 63, 111, 1),
+                color: Color.fromRGBO(255, 255, 255, 1.0),
               ),
             ),
           ),
         ),
         SizedBox(
-          height: 60,
+          height: 20,
         ),
         // Login Line
-        Row(
+        /*Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
@@ -312,9 +419,9 @@ class _SignupPageState extends State<SignupPage> {
               ),
             ),
           ],
-        ),
+        ),*/
         SizedBox(
-          height: 40,
+          height: 0,
         ),
       ],
     );
@@ -326,7 +433,7 @@ class _SignupPageState extends State<SignupPage> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        decoration: BoxDecoration(
+        /*decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
               Color.fromRGBO(255, 138, 120, 1),
@@ -336,7 +443,7 @@ class _SignupPageState extends State<SignupPage> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
           ),
-        ),
+        ),*/
         child: Form(
           key: _formkey,
           autovalidate: true,
@@ -344,26 +451,37 @@ class _SignupPageState extends State<SignupPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                SizedBox(
+                  height: 30,
+                ),
+                Container(
+                  width: 100.0,
+                  height: 100.0,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: new AssetImage("images/logo_karah.png"),
+                          fit: BoxFit.cover)),
+                ),
                 GestureDetector(
                   child: Container(
                     padding: EdgeInsets.only(top: 60),
                     child: Text(
-                      'Karah',
+                      "Créer votre compte",
                       style: TextStyle(
-                        fontSize: 60,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold,
-                        color: Colors.white,
+                        color: Color.fromRGBO(1, 70, 134, 1.0),
                         fontFamily: 'MuseoModerno',
                       ),
                     ),
                   ),
                 ),
                 Text(
-                  '',
+                  "C'est gratuit, simple et sans engagement !",
                   style: TextStyle(
-                    fontStyle: FontStyle.italic,
+                    fontStyle: FontStyle.normal,
                     fontSize: 17,
-                    color: Color.fromRGBO(252, 188, 126, 1),
+                    color: Color.fromRGBO(1, 70, 134, 1.0),
                   ),
                 ),
                 _buildSignUPForm()

@@ -43,7 +43,8 @@ login(User user, AuthNotifier authNotifier, BuildContext context) async {
   try {
     if (authResult != null) {
       FirebaseUser firebaseUser = authResult.user;
-      if (!firebaseUser.isEmailVerified) {
+      //TODO: Code de verification de email
+      /*if (!firebaseUser.isEmailVerified) {
         await FirebaseAuth.instance.signOut();
         pr.hide().then((isHidden) {
           print(isHidden);
@@ -51,7 +52,8 @@ login(User user, AuthNotifier authNotifier, BuildContext context) async {
         toast("Email ID not verified");
         return;
       }
-      else if (firebaseUser != null) {
+      else */
+      if (firebaseUser != null) {
         print("Log In: $firebaseUser");
         authNotifier.setUser(firebaseUser);
         await getUserDetails(authNotifier);

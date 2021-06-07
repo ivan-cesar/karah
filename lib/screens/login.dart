@@ -74,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
             color: Colors.white,
-            border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
+            border: Border.all(color: Color.fromRGBO(1, 70, 134, 1.0)),
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(
@@ -86,17 +86,17 @@ class _LoginPageState extends State<LoginPage> {
             onSaved: (String value) {
               _user.phone = value;
             },
-            cursorColor: Color.fromRGBO(24, 142, 190, 1.0),
+            cursorColor: Color.fromRGBO(1, 70, 134, 1.0),
             decoration: InputDecoration(
               border: InputBorder.none,
               hintText: 'Téléphone',
               hintStyle: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(24, 142, 190, 1.0),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
               icon: Icon(
                 Icons.phone,
-                color: Color.fromRGBO(24, 142, 190, 1.0),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
             ),
           ),
@@ -110,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
             color: Colors.white,
-            border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
+            border: Border.all(color: Color.fromRGBO(1, 70, 134, 1.0)),
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(
@@ -123,12 +123,12 @@ class _LoginPageState extends State<LoginPage> {
               _user.password = value;
             },
             keyboardType: TextInputType.visiblePassword,
-            cursorColor: Color.fromRGBO(24, 142, 190, 1.0),
+            cursorColor: Color.fromRGBO(1, 70, 134, 1.0),
             decoration: InputDecoration(
               suffixIcon: IconButton(
                   icon: Icon(
                     (showPassword) ? Icons.visibility_off : Icons.visibility,
-                    color: Color.fromRGBO(24, 142, 190, 1.0),
+                    color: Color.fromRGBO(1, 70, 134, 1.0),
                   ),
                   onPressed: () {
                     setState(() {
@@ -139,11 +139,11 @@ class _LoginPageState extends State<LoginPage> {
               hintText: 'Mot de passe',
               hintStyle: TextStyle(
                 fontWeight: FontWeight.bold,
-                color: Color.fromRGBO(24, 142, 190, 1.0),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
               icon: Icon(
                 Icons.lock,
-                color: Color.fromRGBO(24, 142, 190, 1.0),
+                color: Color.fromRGBO(1, 70, 134, 1.0),
               ),
             ),
           ),
@@ -185,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
             decoration: BoxDecoration(
-              color: Color.fromRGBO(24, 142, 190, 1.0),
+              color: Color.fromRGBO(1, 70, 134, 1.0),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Text(
@@ -207,7 +207,7 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               '',
               style: TextStyle(
-                color: Colors.blueAccent,
+                color: Color.fromRGBO(1, 70, 134, 1.0),
                 fontSize: 16,
               ),
             ),
@@ -241,7 +241,7 @@ class _LoginPageState extends State<LoginPage> {
         Row(children: <Widget>[
           Expanded(
               child: Divider(
-            color: Color.fromRGBO(24, 142, 190, 1.0),
+            color: Color.fromRGBO(1, 70, 134, 1.0),
             indent: 10,
           )),
           Container(
@@ -262,7 +262,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           Expanded(
               child: Divider(
-            color: Color.fromRGBO(24, 142, 190, 1.0),
+            color: Color.fromRGBO(1, 70, 134, 1.0),
             endIndent: 10,
           )),
         ]),
@@ -274,7 +274,7 @@ class _LoginPageState extends State<LoginPage> {
             Text(
               '',
               style: TextStyle(
-                color: Colors.blueAccent,
+                color: Color.fromRGBO(1, 70, 134, 1.0),
                 fontSize: 16,
               ),
             ),
@@ -293,7 +293,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Text(
                   'Créer un nouveau compte',
                   style: TextStyle(
-                      color: Colors.blueAccent,
+                      color: Color.fromRGBO(1, 70, 134, 1.0),
                       fontSize: 16,
                       fontWeight: FontWeight.normal),
                 ),

@@ -1,5 +1,6 @@
 import 'package:canteen_food_ordering_app/apis/foodAPIs.dart';
 import 'package:canteen_food_ordering_app/notifiers/authNotifier.dart';
+import 'package:canteen_food_ordering_app/screens/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:canteen_food_ordering_app/models/user.dart';
@@ -281,7 +282,7 @@ class _SignupPageState extends State<SignupPage> {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
             border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
-            color: Color.fromRGBO(1, 70, 134, 0.4196078431372549),
+            color: mPrimaryColor,
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(
@@ -328,7 +329,7 @@ class _SignupPageState extends State<SignupPage> {
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           decoration: BoxDecoration(
             border: Border.all(color: Color.fromRGBO(24, 142, 190, 1.0)),
-            color: Color.fromRGBO(1, 70, 134, 0.4196078431372549),
+            color: mPrimaryColor,
             borderRadius: BorderRadius.circular(10),
           ),
           child: TextFormField(

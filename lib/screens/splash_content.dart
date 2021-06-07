@@ -16,6 +16,7 @@ class SplashContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
+        //SizedBox(height: ,),
         Spacer(),
         /*Text(
           "TOKOTO",
@@ -29,8 +30,8 @@ class SplashContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Container(
-              height: getProportionateScreenHeight(80.5),
-              width: getProportionateScreenWidth(80),
+              height: getProportionateScreenHeight(82.2),
+              width: getProportionateScreenWidth(82),
               decoration: BoxDecoration(
                   image: DecorationImage(
                       image:  new AssetImage("images/logo_karah.png"),
@@ -41,7 +42,7 @@ class SplashContent extends StatelessWidget {
             SizedBox(width: 50,),
             GestureDetector(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
                 decoration: BoxDecoration(
                   border: Border.all(
                       color: Color.fromRGBO(1, 70, 134, 1.0)),
